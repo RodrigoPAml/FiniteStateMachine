@@ -5,6 +5,8 @@ A Finite State Machine (FSM) is a mathematical model used to represent and contr
 It is a concept widely used in computer science, engineering, and various other fields to design and analyze systems that exhibit discrete behavior. 
 Finite State Machines are particularly useful for modeling systems with distinct, well-defined states and transitions between these states.
 
+![image](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/668192bf-6094-4641-81ef-3b13db553537)
+
 Here are the key components of a Finite State Machine:
 
 ## States:
