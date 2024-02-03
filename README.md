@@ -40,10 +40,16 @@ Finite State Machines find applications in various areas, including:
 
 # Using the code
 
+## Example 1
+
+![image](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/980972ff-912c-4578-be8b-9ea8c040db13)
+
 We need a input to represent the FSM behavior, in this case a .txt with the content (search in MachineFiles folder)
 
 ```
-# Recognizes the string ABC multiples times or empty (ABC)+
+# Recognizes the string ABC multiples times (ABC)*
+# The * character is for when the machine have nothing more to read
+# Accept only character of size 1
 
 STATE_A=A->STATE_B|*->ACCEPT
 STATE_B=B->STATE_C
@@ -69,5 +75,39 @@ In the output we have
 
 ```
 The final state is ACCEPT
+Finished reading: True
+```
+
+## Example 2
+
+![image](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/821d797f-d304-430b-bdfa-edb2226af228)
+
+```
+# Recognizes character strings formed by AA or BB (AA|BB)* which can be empty
+
+INITIAL=*->ACCEPT|A->STATE_A|B->STATE_B
+STATE_A=A->STATE_REPEAT
+STATE_B=B->STATE_REPEAT
+STATE_REPEAT=*->ACCEPT|A->STATE_A|B->STATE_B
+ACCEPT=*->ACCEPT
+```
+
+And run in the program
+
+```C#
+using StateMachine;
+var machine = new Machine(path); // open txt file
+machine.SetData("AABBA"); // data to be readed (input)
+
+var (finalState, finished) = machine.Execute("INITIAL"); // Run with initial state
+
+Console.WriteLine($"The final state is {finalState}");
+Console.WriteLine($"Finished reading: {finished}");
+```
+
+In the output we have
+
+```
+The final state is STATE_A
 Finished reading: True
 ```
