@@ -128,8 +128,11 @@
             if (state == null)
                 throw new Exception("Initial state not found");
 
-            Iterate(_data[_curr], state);
-            
+            _lastState = state.Name;
+
+            if (_data.Length != 0)
+                Iterate(_data[_curr], state);
+
             return (_lastState, _curr == _data.Count());
         }
 
