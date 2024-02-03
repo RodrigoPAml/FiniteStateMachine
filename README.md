@@ -75,7 +75,7 @@ Console.WriteLine($"Finished reading: {finished}");
 In the output we have
 
 ```
-The final state is ACCEPT
+The final state is STATE_A
 Finished reading: True
 ```
 
