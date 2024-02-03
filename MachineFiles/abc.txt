@@ -1,0 +1,6 @@
+﻿# Reconhece cadeia de caracter ABC ou vazio (ABC)+
+
+STATE_A=A->STATE_B|*->ACCEPT
+STATE_B=B->STATE_C
+STATE_C=C->STATE_A
+ACCEPT=*->ACCEPT
