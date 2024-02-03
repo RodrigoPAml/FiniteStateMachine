@@ -1,7 +1,6 @@
-﻿# Reconhece cadeia de caracter formadas por AA ou BB (AA|BB)* podendo ser vazio
+﻿# Reconhece cadeia de caracter formadas por AA ou BB (AA|BB)+ pelo menos uma vez
 
-INITIAL=*->ACCEPT|A->STATE_A|B->STATE_B
+INITIAL=A->STATE_A|B->STATE_B
 STATE_A=A->STATE_REPEAT
 STATE_B=B->STATE_REPEAT
-STATE_REPEAT=*->ACCEPT|A->STATE_A|B->STATE_B
-ACCEPT=*->ACCEPT
+STATE_REPEAT=A->STATE_A|B->STATE_B
