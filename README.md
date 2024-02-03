@@ -42,16 +42,14 @@ Finite State Machines find applications in various areas, including:
 
 # Using the code
 
-## Example 1 (ABC)+
+## Example 1 (ABC)*
 
-![302008125-91305d6f-5c1a-440a-9db6-f9445beb13d4](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/c8835169-de7d-456c-9714-b4dab29d700e)
+![302010552-ffca7e79-9737-416b-beaa-642d7ba7418a](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/789a72e2-a997-4906-bd1c-703b6e795678)
 
 We need a input to represent the FSM behavior, in this case a .txt with the content (search in MachineFiles folder)
 
 ```
-# Recognizes the string ABC multiples times (ABC)+ and at least once
-# The * character is for when the machine have nothing more to read
-# Accept only character of size 1
+# Recognizes the string ABC multiples times (ABC)*, can be empty
 
 STATE_A=A->STATE_B
 STATE_B=B->STATE_C
