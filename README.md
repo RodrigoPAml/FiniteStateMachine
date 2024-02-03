@@ -5,7 +5,7 @@ A Finite State Machine (FSM) is a mathematical model used to represent and contr
 It is a concept widely used in computer science, engineering, and various other fields to design and analyze systems that exhibit discrete behavior. 
 Finite State Machines are particularly useful for modeling systems with distinct, well-defined states and transitions between these states.
 
-![image](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/ddf22138-2fe5-4387-8307-3819b78586ff)
+![302008125-91305d6f-5c1a-440a-9db6-f9445beb13d4](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/156192e1-0b7f-440d-89d2-3df77db231d9)
 
 Here are the key components of a Finite State Machine:
 
@@ -42,21 +42,20 @@ Finite State Machines find applications in various areas, including:
 
 # Using the code
 
-## Example 1 (ABC)*
+## Example 1 (ABC)+
 
-![302008199-28c574ac-8ecd-42df-af3f-bedd805d5582](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/ffca7e79-9737-416b-beaa-642d7ba7418a)
+![302008125-91305d6f-5c1a-440a-9db6-f9445beb13d4](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/c8835169-de7d-456c-9714-b4dab29d700e)
 
 We need a input to represent the FSM behavior, in this case a .txt with the content (search in MachineFiles folder)
 
 ```
-# Recognizes the string ABC multiples times (ABC)*
+# Recognizes the string ABC multiples times (ABC)+ and at least once
 # The * character is for when the machine have nothing more to read
 # Accept only character of size 1
 
-STATE_A=A->STATE_B|*->ACCEPT
+STATE_A=A->STATE_B
 STATE_B=B->STATE_C
 STATE_C=C->STATE_A
-ACCEPT=*->ACCEPT 
 ```
 
 And run in the program
@@ -76,24 +75,23 @@ Console.WriteLine($"Finished reading: {finished}");
 In the output we have
 
 ```
-The final state is ACCEPT
+The final state is STATE_A
 Finished reading: True
 ```
 
-## Example 2 (AA|BB)*
+## Example 2 (AA|BB)+
 
-![image](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/91305d6f-5c1a-440a-9db6-f9445beb13d4)
+![302008125-91305d6f-5c1a-440a-9db6-f9445beb13d4](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/8e9dcaa5-b9b8-4db7-b4c5-baa405b1f399)
 
 ```
-# Recognizes character strings formed by AA or BB (AA|BB)* which can be empty
+# Recognizes character strings formed by AA or BB (AA|BB)+ which can't be empty
 
 We need a input to represent the FSM behavior, in this case a .txt with the content (search in MachineFiles folder)
 
-INITIAL=*->ACCEPT|A->STATE_A|B->STATE_B
+INITIAL=A->STATE_A|B->STATE_B
 STATE_A=A->STATE_REPEAT
 STATE_B=B->STATE_REPEAT
-STATE_REPEAT=*->ACCEPT|A->STATE_A|B->STATE_B
-ACCEPT=*->ACCEPT
+STATE_REPEAT=A->STATE_A|B->STATE_B
 ```
 
 And run in the program
