@@ -23,7 +23,7 @@ public class Program
 
     private static void Main(string[] args)
     {
-        string path = "C:/Users/Rodrigo/Desktop/StateMachine/MachineFiles/";
+        string path = "C:/Users/Rodrigo/Desktop/FiniteStateMachine/MachineFiles/";
 
         RunExample($"{path}aabb.txt", "AABBAABB", "INITIAL");
         RunExample($"{path}aabb.txt", "AABBAABBA", "INITIAL");

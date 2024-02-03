@@ -128,18 +128,7 @@
             if (state == null)
                 throw new Exception("Initial state not found");
 
-            // Se data é vazia já ve se primeiro estado aceita vazio
-            if (_data.Length == 0)
-            {
-                var transaction = state.Transitions
-                    .Where(x => x.Condition == '*')
-                    .FirstOrDefault();
-
-                if (transaction != null)
-                    _lastState = transaction.Destiny;
-            }
-            else 
-             Iterate(_data[_curr], state);
+            Iterate(_data[_curr], state);
             
             return (_lastState, _curr == _data.Count());
         }
@@ -163,14 +152,7 @@
 
             foreach (var transition in state.Transitions)
             {
-                // Verifica se aceita vazio e esta no fim da fita, se sim é o ultimo estado e retornamos
-                if (transition.Condition == '*' && _curr >= _data.Count())
-                {
-                    _lastState = transition.Destiny;
-                    break;
-                }
-                // Verifica se condição bate para entrar em novo estado
-                else if (transition.Condition == current)
+                if (transition.Condition == current)
                 {
                     // Salva no novo ultimo estado
                     _lastState = transition.Destiny;
@@ -179,18 +161,6 @@
                     // Se tem mais o que ler, verifica proximo estado
                     if (!endOfData)
                         Iterate(_data[_curr], _states.Find(x => x.Name == transition.Destiny));
-                    else
-                    {
-                        // Se não tem mais o que ler, verifica se o ultimo estado aceita vazio, sendo este o ultimo estado
-                        var lastState = _states.Find(x => x.Name == transition.Destiny);
-
-                        var transaction = lastState?.Transitions
-                            .Where(x => x.Condition == '*')
-                            .FirstOrDefault();
-
-                        if (transaction != null)
-                            _lastState = transaction.Destiny;
-                    }
 
                     break;
                 }
