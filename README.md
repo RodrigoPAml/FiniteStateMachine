@@ -44,7 +44,7 @@ Finite State Machines find applications in various areas, including:
 
 ## Example 1 (ABC)+
 
-![302008125-91305d6f-5c1a-440a-9db6-f9445beb13d4](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/c8835169-de7d-456c-9714-b4dab29d700e)
+![302010552-ffca7e79-9737-416b-beaa-642d7ba7418a](https://github.com/RodrigoPAml/FiniteStateMachine/assets/41243039/e7e64048-51ff-4aec-b9a5-14069f16f866)
 
 We need a input to represent the FSM behavior, in this case a .txt with the content (search in MachineFiles folder)
 
