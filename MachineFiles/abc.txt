@@ -1,4 +1,4 @@
-﻿# Reconhece cadeia de caracter ABC pelo menos 1 vez (ABC)+
+﻿# Reconhece cadeia de caracter ABC ou vazio (ABC)*
 
 STATE_A=A->STATE_B
 STATE_B=B->STATE_C
