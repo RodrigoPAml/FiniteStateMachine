@@ -87,6 +87,8 @@ Finished reading: True
 ```
 # Recognizes character strings formed by AA or BB (AA|BB)* which can be empty
 
+We need a input to represent the FSM behavior, in this case a .txt with the content (search in MachineFiles folder)
+
 INITIAL=*->ACCEPT|A->STATE_A|B->STATE_B
 STATE_A=A->STATE_REPEAT
 STATE_B=B->STATE_REPEAT
