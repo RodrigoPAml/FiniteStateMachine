@@ -23,12 +23,10 @@ public class Program
 
     private static void Main(string[] args)
     {
-        string path = "C:/Users/Rodrigo/Desktop/FiniteStateMachine/MachineFiles/";
+        RunExample($"MachineFiles/aabb.txt", "AABBAABB", "INITIAL");
+        RunExample($"MachineFiles/aabb.txt", "AABBAABBA", "INITIAL");
 
-        RunExample($"{path}aabb.txt", "AABBAABB", "INITIAL");
-        RunExample($"{path}aabb.txt", "AABBAABBA", "INITIAL");
-
-        RunExample($"{path}abc.txt", "ABCABC", "STATE_A");
-        RunExample($"{path}abc.txt", "ABCABCABAC", "STATE_A");
+        RunExample($"MachineFiles/abc.txt", "ABCABC", "STATE_A");
+        RunExample($"MachineFiles/abc.txt", "ABCABCABAC", "STATE_A");
     }
 }
